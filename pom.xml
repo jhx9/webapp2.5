@@ -81,7 +81,7 @@
 			                <!--  skip>true</skip -->
 			             <!-- 2 includes-->
 			                   <!-- Include unit tests within integration-test phase. -->
-			                <include>src/test/java/*Test.java</include>
+			                <!-- 2  include>src/test/java/*Test.java</include> -->
 			             <!-- 2 /includes> -->
 			             <excludes>
 			               <!-- Exclude integration tests within (unit) test phase. -->
