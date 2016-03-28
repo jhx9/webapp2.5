@@ -64,7 +64,9 @@
 			    <artifactId>maven-surefire-plugin</artifactId>
 				<version>2.19.1</version>
 			    <configuration>
+			       <!-- Skip the default running of this plug-in (or everything is run twice...see below) -->
 			       <skip>false</skip>
+			       <!-- Show 100% of the lines from the stack trace (doesn't work) -->
 			       <trimStackTrace>false</trimStackTrace>
 			    </configuration>
 			    <executions>
@@ -75,7 +77,13 @@
 			             <goal>test</goal>
 			          </goals>
 			          <configuration>
-		             <excludes>
+			                <!-- Never skip running the tests when the test phase is invoked -->
+			                <!--  skip>true</skip -->
+			             <!-- 2 includes-->
+			                   <!-- Include unit tests within integration-test phase. -->
+			                <!-- 2  include>src/test/java/*Test.java</include> -->
+			             <!-- 2 /includes> -->
+			             <excludes>
 			               <!-- Exclude integration tests within (unit) test phase. -->
 			                <exclude>**/*IntegrationTests.java</exclude>
 			            </excludes>
@@ -90,6 +98,10 @@
 			          <configuration>
 			            <!-- Never skip running the tests when the integration-test phase is invoked -->
 			             <skip>false</skip>
+			             <!--  <includes> -->
+			               <!-- Include integration tests within integration-test phase. -->
+			               <include>**/*IntegrationTests.java</include>
+			             <!--  /includes -->
 			            <suiteXmlFiles>
 			        	    <suiteXmlFile>testng.xml</suiteXmlFile>
 			     	     </suiteXmlFiles>
