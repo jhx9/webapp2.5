@@ -1,14 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<suite name="Sample Suite" verbose="1" >
-  <test name="Unit Level Test" >
-  <classes>
-		<class name="box.ConcateTest">
-		</class>
-	</classes>
-  </test>
-<!--  </suite> -->
-
-<!--  origional suit name here  -->
+<suite name="TestSuite" parallel="tests">
 <test name="FireFox Test">
 <parameters>
 	<parameter name="platform" value="Windows" />
