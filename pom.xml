@@ -24,7 +24,7 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>6.9.10</version>
-            <scope>test</scope>	
+<!--  		<scope>test</scope>  -->	
 		</dependency>
 	</dependencies>
 
@@ -60,30 +60,14 @@
 				</plugin>
 				<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-failsafe-plugin</artifactId>
+				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.19.1</version>
 				<configuration>
 					<suiteXmlFiles>
-						<!-- TestNG suite XML files surefire -->
+						<!-- TestNG suite XML files -->
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
-				<executions>
-			          <execution>
-			            <id>integration-test</id>
-			            <phase>integration-test</phase>
-			            <goals>
-			              <goal>integration-test</goal>
-			            </goals>
-			          </execution>
-			          <execution>
-			            <id>verify</id>
-			            <phase>verify</phase>
-			            <goals>
-			              <goal>verify</goal>
-			            </goals>
-			          </execution>
-      			  </executions>	
 			</plugin>
 			</plugins>
 		</pluginManagement>
