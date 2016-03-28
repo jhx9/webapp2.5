@@ -58,28 +58,25 @@
 					<version>2.15</version>
 				</plugin>
 								
-				<plugin>
-				    <artifactId>maven-surefire-plugin</artifactId>
-				    <version>2.19</version>
-				    <dependencies>
-				        <dependency>
-				            <groupId>org.apache.maven.surefire</groupId>
-				            <artifactId>surefire-junit47</artifactId>
-				            <version>2.19</version>
-				        </dependency>
-				        <dependency>
-				            <groupId>org.apache.maven.surefire</groupId>
-				            <artifactId>surefire-testng</artifactId>
-				            <version>2.19</version>
-				        </dependency>
-				    </dependencies>
-				    <configuration>
-					<suiteXmlFiles>
-						<!-- TestNG suite XML files -->
-						<suiteXmlFile>testng.xml</suiteXmlFile>
-					</suiteXmlFiles>
-				</configuration>
-				</plugin>									
+				 <plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					 <artifactId>maven-failsafe-plugin</artifactId> 
+					<version>2.12.4</version>        
+					<executions>
+					          <execution>
+					            <id>integration-test</id>
+						            <goals>
+						             <goal>integration-test</goal>
+						              <goal>verify</goal>
+						            </goals>
+								<configuration>
+						      	    <suiteXmlFiles>
+						        	    <suiteXmlFile>testng.xml</suiteXmlFile>
+						     	     </suiteXmlFiles>
+					     	  	 </configuration>
+					          </execution>
+					  </executions>
+				 </plugin>									
 				
 			</plugins>
 		</pluginManagement>
