@@ -29,7 +29,7 @@ public class TestSuiteBase {
 	
 	public static WebDriver getDriverInstance(String platform, String browser, String version, String url)
 			throws MalformedURLException {
-		String nodeURL = "http://10.0.2.7:5555/wd/hub";
+		String nodeURL = "http://10.0.0.5:5555/wd/hub";
 		WebDriver driver = null;
 		DesiredCapabilities caps = new DesiredCapabilities();
 		
